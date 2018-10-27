@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>乐淘管理系统-二级分类</title>
+  <title>乐淘管理系统-商品管理</title>
   <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
   <!-- <link rel="stylesheet" href="./css/common.css"> -->
@@ -128,39 +128,61 @@
   <!-- 添加分类模态框 -->
   <!-- 模态框 -->
   <div class="modal fade bs-example-modal-sm" id="secondModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-dialog " role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title">添加分类</h4>
+          <h4 class="modal-title">添加商品</h4>
         </div>
         <form>
           <div class="modal-body">
             <!-- 下拉菜单区域 -->
             <div class="dropdown">
+              <div class="form-group">
+                <input type="hidden" autocomplete="off" name="brandId" id="brandId" class="form-control" id="proName" placeholder="请输入商品名称">
+              </div>
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
-                <span class="classfix">请选择一级分类</span>
+                <span class="classfix">请选择二级分类</span>
                 <span class="caret"></span>
               </button>
               <ul id="secDown" class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <!-- 挖个坑 -->
               </ul>
+
             </div>
             <!-- 下拉菜单结束 -->
             <div class="form-group">
-              <input type="text" data-bv-field="categoryName" autocomplete="off" name="categoryName" class="form-control" placeholder="请输入一级分类的名称">
+              <input type="text" autocomplete="off" name="proName" class="form-control" id="proName" placeholder="请输入商品名称">
             </div>
+            <div class="form-group">
+              <textarea placeholder="请输入商品描述" name="proDesc" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="text" autocomplete="off" name="num" class="form-control" placeholder="请输入商品库存(1-9999)">
+            </div>
+            <div class="form-group">
+              <input type="text" autocomplete="off" name="size" class="form-control" placeholder="请输入商品尺码(32-46)">
+            </div>
+            <div class="form-group">
+              <input type="text" autocomplete="off" name="oldPrice" class="form-control" placeholder="请输入商品原价">
+            </div>
+            <div class="form-group">
+              <input type="text" autocomplete="off" name="price" class="form-control" placeholder="请输入商品价格">
+            </div>
+            <div class="form-group">
+                <input type="hidden" autocomplete="off" name="statu" value="1" class="form-control" placeholder="请输入商品价格">
+              </div>
             <!-- 按钮 -->
             <div class="form-group fileupload_box">
               <button class="btn btn-default">上传图片</button>
-              <input id="fileupload" type="file" name="pic1" data-url="/category/addSecondCategoryPic" class="file btn btn-default">
+              <input id="fileupload" multiple type="file" name="pic1" data-url="/product/addProductPic" class="file btn btn-default">
             </div>
             <!-- 图片区 -->
-            <div class="img">
-              <img width="100" src="./images/none.png" alt="">
+            <div class="form-group img">
+              <input type="hidden" name="brandLogo" data-bv-field="brandLogo">
             </div>
           </div>
           <div class="modal-footer">
@@ -190,7 +212,7 @@
   <!-- 下拉菜单的模板引擎 -->
   <script type="text/html" id="tem">
     {{ each rows v i }}
-    <li>
+    <li data-id="{{ v.id }}">
       <a href="#">{{ v.brandName }}</a>
     </li>
     {{ /each }}
