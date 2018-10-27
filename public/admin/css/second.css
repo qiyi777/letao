@@ -1,3 +1,34 @@
 .lt_left .nav li .child {
   display: block;
 }
+.lt_right .content .table th {
+  text-align: center;
+}
+.content .table > tbody > tr > td {
+  vertical-align: middle;
+}
+#secondModal .dropdown {
+  margin-bottom: 12px;
+}
+table {
+  margin-top: 20px;
+}
+
+.fileupload_box {
+  position: relative;
+  width: 82px;
+  height: 34px;
+  cursor: pointer;
+}
+.file {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.fileupload_box:hover .btn {
+  background: #e6e6e6;
+}

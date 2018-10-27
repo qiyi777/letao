@@ -1,3 +1,9 @@
 .lt_left .nav li .child {
   display: block;
 }
+.lt_right .default {
+  margin-bottom: 20px;
+}
+.lt_right table th {
+  text-align: center;
+}
