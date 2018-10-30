@@ -95,3 +95,53 @@ ul,ol {
     }
   }
 }
+
+.search {
+  position: relative;
+  margin: 10px;
+  input {
+    font-size: 12px;
+    height: 34px;
+    border: 1px solid #007aff;
+  }
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #007aff;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+.product {
+  margin-top: 10px;
+  padding: 0 10px;
+  .item {
+    text-align: center;
+    width: 48%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    float: left;
+    margin-bottom: 10px;
+    &:nth-child(2n) {
+      float: right;
+    } 
+    a {
+      display: block;
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
+    .price {
+      color: red;
+    }
+    .oldPrice {
+      text-decoration:line-through;
+    }
+    span {
+      padding: 0 2px;
+    }
+
+  }
+}

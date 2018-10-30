@@ -1,0 +1,24 @@
+.lt_content .search input {
+  margin-bottom: 0;
+}
+.lt_content .nav ul {
+  background: #eee;
+}
+.lt_content .nav ul li {
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.lt_content .nav ul li a {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  line-height: 34px;
+}
+.lt_content .nav ul li.active a span {
+  color: orange;
+}
+.product .now {
+  color: #666;
+  font-size: 12px;
+}
